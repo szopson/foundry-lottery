@@ -80,7 +80,7 @@ contract AddConsumer is Script {
 
     function addConsumer(address contractToAddtoVrf, address vrfCoordinator, uint256 subId, address account) public {
         console.log("Adding consumer contract: ", contractToAddtoVrf);
-        console.log("To vrfCoordinator: ", contractToAddtoVrf);
+        console.log("To vrfCoordinator: ", vrfCoordinator);
         console.log("On chainId: ", block.chainid);
         vm.startBroadcast(account);
         VRFCoordinatorV2_5Mock(vrfCoordinator).addConsumer(subId, contractToAddtoVrf);
