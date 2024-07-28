@@ -20,3 +20,15 @@ This code is to create a proveable random smart contract lottery.
     1. Local chain
     2. Forked testnet
     3. Forked mainnet
+
+# INSTEAD OF PRIVATE KEY PASSINV IN .ENV FILE WE CAN SET IT UP HERE, LIKE THIS:   
+ cast wallet import defaultKey --interactive
+
+!remember the password!
+
+## IF CONTRACT WAS NOT VERIFIED AUTOMATICALLY AFTER DEPLOYMENT TO SEPOLIA YOU CAN USE BELOW COMMAND(use your own contract address!):
+forge verify-contract 0xe9D52cB94987eB686351B642479C688797A54cb9 src/Raffle.sol:Raffle --etherscan-api-key $ETHERSCAN_API_KEY --rpc-url $SEPOLIA_RPC_URL --show-standard-json-input > json.json
+# YOU CAN MANUALLY UPLOAD json.json into the etherscan contract page 
+
+##### DEPLOYED CONTRACT ADDRESS #####
+0xe9D52cB94987eB686351B642479C688797A54cb9
